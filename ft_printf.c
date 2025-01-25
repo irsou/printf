@@ -6,21 +6,21 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:13:18 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/01/25 13:27:29 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/01/25 18:27:19 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void handle_format(char format, va_list args)
+void	handle_format(char format, va_list args)
 {
 	if (format == 'c')
-        ft_putchar(va_arg(args, int));
+		ft_putchar(va_arg(args, int));
 	else if (format == 's')
 		ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
 		ft_putptr(va_arg(args, void *));
-	else if (format == 'd' || format  =='i')
+	else if (format == 'd' || format == 'i')
 		ft_putnbr(va_arg(args, int));
 	else if (format == 'u')
 		ft_putnbr_unsigned(va_arg(args, unsigned int));

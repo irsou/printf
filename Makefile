@@ -6,24 +6,24 @@
 #    By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/26 16:22:37 by isousa-s          #+#    #+#              #
-#    Updated: 2024/12/26 16:47:37 by isousa-s         ###   ########.fr        #
+#    Updated: 2025/01/25 18:29:04 by isousa-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = ft_printf.a
 
 SRC = ft_printf.c \
 ft_printf_utils.c \
+ft_printf_hex_utils.c \
 
 OBJ = ${SRC:.c=.o}
-OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 CC = cc
 FLAGS = -Wall -Werror -Wextra
 RM = rm -f
 AR = ar rcs
 
-%.o: %.c libftprintf.h
+%.o: %.c ft_printf.h
 	${CC} ${FLAGS} -c $< -o $@
 
 all: $(NAME)
@@ -31,11 +31,8 @@ all: $(NAME)
 $(NAME): ${OBJ}
 	${AR} ${NAME} ${OBJ}
 
-bonus:${NAME} ${OBJ_BONUS}
-	${AR} ${NAME} ${OBJ} ${OBJ_BONUS}
-
 clean:
-	${RM} ${OBJ} ${OBJ_BONUS}
+	${RM} ${OBJ}
 
 fclean: clean
 	${RM} ${NAME}
