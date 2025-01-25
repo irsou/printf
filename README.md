@@ -1,27 +1,31 @@
 # ft_printf
 
- Emulates the printf function
-  Format specifiers:
-		c - single character
- 		s - string
- 		p - pointer (in hexadecimal format prefixed with 0x)
- 		d - signed decimal integer
- 		i - signed decimal integer (alternative for d)
- 		u - unsigned decimal integer
- 		x - unsigned hexadecimal numnber (lowercase letters)
- 		X - unsigned hexadecimal numnber (capital letters)
- 		% - literal % symbol
+## 🚀 Purpose
+Emulates the printf function
 
-Compilación con archivo main:
-make
-cc -Wall -Werror -Wextra main.c ft_printf.a
-./a.out
+### 📜 Format specifiers:
+* c - single character
+* s - string
+* p - pointer (in hexadecimal format prefixed with 0x)
+* d - signed decimal integer
+* i - signed decimal integer (alternative for d)
+* u - unsigned decimal integer
+* x - unsigned hexadecimal numnber (lowercase letters)
+* X - unsigned hexadecimal numnber (capital letters)
+* % - literal % symbol
 
-  X cc -Wall -Werror -Wextra main.c -L. -lftprintf  no valdría porque el -l busca un archivo que empiece por lib, buscaría libftprintf.a
-Compilación en línea:
-make
-echo '#include "ft_printf.h" int main(void) { ft_printf("%u\n", (unsigned int)4294967295); return 0; }' | cc -Wall -Werror -Wextra -x c - ft_printf.a && ./a.out
+## ⚙️ How to compile
+With main.c file:
+* make
+* cc -Wall -Werror -Wextra main.c ft_printf.a
+* ./a.out
+
+  *Note: -l use would search a file which starts by lib (libftprintf.a). That file does not exist in this proyect so it can't be used.*
 
 
-Enlaces de interés:
-https://hackernoon.com/what-is-va_list-in-c-exploring-the-secrets-of-ft_printf
+## 🌐 Related links
+[va_list info](https://hackernoon.com/what-is-va_list-in-c-exploring-the-secrets-of-ft_printf)
+
+
+##  🤝Contributions
+Contributions are welcome! Open an issue or submit a pull request to suggest improvements or fixes.
