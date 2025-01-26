@@ -19,9 +19,7 @@ With main.c file:
 * make
 * cc -Wall -Werror -Wextra main.c libftprintf.a // cc -Wall -Werror -Wextra main.c -L. -lftprintf
 * ./a.out
-
   *Note: -l use searchs a library which starts by lib (libftprintf.a in this case).*
-
 
 ## 🌐 Related links
 [va_list info](https://hackernoon.com/what-is-va_list-in-c-exploring-the-secrets-of-ft_printf)
