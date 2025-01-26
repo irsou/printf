@@ -17,10 +17,10 @@ Emulates the printf function
 ## ⚙️ How to compile
 With main.c file:
 * make
-* cc -Wall -Werror -Wextra main.c ft_printf.a
+* cc -Wall -Werror -Wextra main.c libftprintf.a // cc -Wall -Werror -Wextra main.c -L. -lftprintf
 * ./a.out
 
-  *Note: -l use would search a file which starts by lib (libftprintf.a). That file does not exist in this proyect so it can't be used.*
+  *Note: -l use searchs a library which starts by lib (libftprintf.a in this case).*
 
 
 ## 🌐 Related links

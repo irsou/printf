@@ -6,11 +6,11 @@
 #    By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/26 16:22:37 by isousa-s          #+#    #+#              #
-#    Updated: 2025/01/25 18:29:04 by isousa-s         ###   ########.fr        #
+#    Updated: 2025/01/26 11:52:15 by isousa-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 SRC = ft_printf.c \
 ft_printf_utils.c \
