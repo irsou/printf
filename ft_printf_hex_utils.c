@@ -12,39 +12,47 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbr_hex(unsigned int n)
+int	ft_putnbr_hex(unsigned int n)
 {
 	char	*hex_str;
+	int		len;
 
+	len = 0;
 	hex_str = "0123456789abcdef";
 	if (n > 15)
-		ft_putnbr_hex(n / 16);
-	ft_putchar(hex_str[n % 16]);
+		len += ft_putnbr_hex(n / 16);
+	len += ft_putchar(hex_str[n % 16]);
+	return (len);
 }
 
-void	ft_putnbr_hex_upper(unsigned int n)
+int	ft_putnbr_hex_upper(unsigned int n)
 {
 	char	*hex_str;
+	int		len;
 
+	len = 0;
 	hex_str = "0123456789ABCDEF";
 	if (n > 15)
-		ft_putnbr_hex_upper(n / 16);
-	ft_putchar(hex_str[n % 16]);
+		len += ft_putnbr_hex_upper(n / 16);
+	len += ft_putchar(hex_str[n % 16]);
+	return (len);
 }
 
-void	ft_putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
 	unsigned long long	address;
 	char				*hex_str;
 	char				buffer[16];
 	int					pos;
+	int					len;
 
 	address = (unsigned long long)ptr;
 	hex_str = "0123456789abcdef";
 	pos = 0;
-	ft_putstr("0x");
+	len = 0;
+	len += ft_putstr("0x");
 	if (address == 0)
-		ft_putchar('0');
+		len += ft_putchar('0');
 	else
 	{
 		while (address)
@@ -53,6 +61,7 @@ void	ft_putptr(void *ptr)
 			address = address / 16;
 		}
 		while (pos--)
-			ft_putchar(buffer[pos]);
+			len += ft_putchar(buffer[pos]);
 	}
+	return (len);
 }

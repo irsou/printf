@@ -6,21 +6,16 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:47:02 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/01/25 18:30:01 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/01/26 11:18:18 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-void	ft_putstr(char *s)
-{
-	if (s)
-		write(1, s, ft_strlen(s));
+	return (1);
 }
 
 size_t	ft_strlen(const char *str)
@@ -33,26 +28,42 @@ size_t	ft_strlen(const char *str)
 	return (pos);
 }
 
-void	ft_putnbr(int n)
+int	ft_putstr(char *s)
 {
+	if (!s)
+		s = "(null)";
+	write(1, s, ft_strlen(s));
+	return (ft_strlen(s));
+}
+
+int	ft_putnbr(int n)
+{
+	int		len;
+
+	len = 0;
 	if (n == -2147483648)
 	{
-		ft_putstr("-2147483648");
-		return ;
+		len += ft_putstr("-2147483648");
+		return (len);
 	}
 	if (n < 0)
 	{
-		ft_putchar('-');
+		len += ft_putchar('-');
 		n = -n;
 	}
 	if (n > 9)
-		ft_putnbr(n / 10);
-	ft_putchar((n % 10) + '0');
+		len += ft_putnbr(n / 10);
+	len += ft_putchar((n % 10) + '0');
+	return (len);
 }
 
-void	ft_putnbr_unsigned(unsigned int n)
+int	ft_putnbr_unsigned(unsigned int n)
 {
+	int		len;
+
+	len = 0;
 	if (n > 9)
-		ft_putnbr_unsigned(n / 10);
-	ft_putchar((n % 10) + '0');
+		len += ft_putnbr_unsigned(n / 10);
+	len += ft_putchar((n % 10) + '0');
+	return (len);
 }
