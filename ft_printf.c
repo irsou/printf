@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:13:18 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/02 16:28:40 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:07:22 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,4 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (len);
 }
+

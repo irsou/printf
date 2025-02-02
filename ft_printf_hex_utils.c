@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:28:24 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/01/25 18:28:24 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/02 17:04:27 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,14 @@ int	ft_putnbr_hex_upper(unsigned int n)
 	return (len);
 }
 
-int	ft_putptr(void *ptr)
+void	ft_ptr_to_hex(unsigned long long address, int *len)
 {
-	unsigned long long	address;
-	char				*hex_str;
-	char				buffer[16];
-	int					pos;
-	int					len;
+	char	*hex_str;
+	char	buffer[16];
+	int		pos;
 
-	if (ptr == NULL)
-		return (ft_putstr("(nil)"));
-	address = (unsigned long long)ptr;
-	hex_str = "0123456789abcdef";
 	pos = 0;
-	len = 0;
-	len += ft_putstr("0x");
+	hex_str = "0123456789ABCDEF";
 	if (address == 0)
 		len += ft_putchar('0');
 	else
@@ -65,5 +58,18 @@ int	ft_putptr(void *ptr)
 		while (pos--)
 			len += ft_putchar(buffer[pos]);
 	}
+}
+
+int	ft_putptr(void *ptr)
+{
+	unsigned long long	address;
+	int					len;
+
+	len = 0;
+	if (ptr == NULL)
+		return (ft_putstr("(nil)"));
+	address = (unsigned long long)ptr;
+	len += ft_putstr("0x");
+	ft_ptr_to_hex(address, &len);
 	return (len);
 }
