@@ -46,6 +46,8 @@ int	ft_putptr(void *ptr)
 	int					pos;
 	int					len;
 
+	if (ptr == NULL)
+		return (ft_putstr("(nil)"));
 	address = (unsigned long long)ptr;
 	hex_str = "0123456789abcdef";
 	pos = 0;
