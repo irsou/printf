@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:13:18 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/02/02 16:25:25 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/02 16:28:40 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	handle_format(char format, va_list args)
 	else if (format == 'd' || format == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	else if (format == 'u')
-		return f(t_putnbr_unsigned(va_arg(args, unsigned int)));
+		return (ft_putnbr_unsigned(va_arg(args, unsigned int)));
 	else if (format == 'x')
 		return (ft_putnbr_hex(va_arg(args, unsigned int)));
 	else if (format == 'X')

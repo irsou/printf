@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:22:50 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/01/26 11:38:28 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/02 16:26:51 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ int main(void)
     ft_printf("Return value: %d\n", n);
 	n = printf("Pointer: %p\n", &x);
     printf("Return value: %d\n", n);
+	n = ft_printf("Pointer: %p\n", NULL);
+	ft_printf("Return value: %d\n", n);
+	n = printf("Pointer: %p\n", NULL);
+	printf("Return value: %d\n", n);
     // Prueba de enteros decimales
     n = ft_printf("Decimal: %d\n", 12345);
     ft_printf("Return value: %d\n", n);
