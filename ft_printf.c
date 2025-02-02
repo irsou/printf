@@ -6,7 +6,7 @@
 /*   By: isousa-s <isousa-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 16:13:18 by isousa-s          #+#    #+#             */
-/*   Updated: 2025/01/26 11:42:32 by isousa-s         ###   ########.fr       */
+/*   Updated: 2025/02/02 16:25:25 by isousa-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 int	handle_format(char format, va_list args)
 {
 	if (format == 'c')
-		return ft_putchar(va_arg(args, int));
+		return (ft_putchar(va_arg(args, int)));
 	else if (format == 's')
-		return ft_putstr(va_arg(args, char *));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (format == 'p')
-		return ft_putptr(va_arg(args, void *));
+		return (ft_putptr(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
-		return ft_putnbr(va_arg(args, int));
+		return (ft_putnbr(va_arg(args, int)));
 	else if (format == 'u')
-		return ft_putnbr_unsigned(va_arg(args, unsigned int));
+		return f(t_putnbr_unsigned(va_arg(args, unsigned int)));
 	else if (format == 'x')
-		return ft_putnbr_hex(va_arg(args, unsigned int));
+		return (ft_putnbr_hex(va_arg(args, unsigned int)));
 	else if (format == 'X')
-		return ft_putnbr_hex_upper(va_arg(args, unsigned int));
+		return (ft_putnbr_hex_upper(va_arg(args, unsigned int)));
 	else if (format == '%')
-		return write(1, "%", 1);
+		return (write(1, "%", 1));
 	return (0);
 }
 
